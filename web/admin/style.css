@@ -1,0 +1,20 @@
+.bg-custom{
+    background-color: #edd182;
+}
+.navbar .nav-item .nav-link{
+    color: white;
+}
+.navbar .nav-item:hover .nav-link{
+    background-color: white;
+    color: #303f9f;
+    border-radius: 15px;
+    
+}
+.footer{
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    padding: 10px;
+    color: #FF9800;
+    
+}

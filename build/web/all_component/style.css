@@ -1,0 +1,22 @@
+.bg-custom{
+    background-color: white;
+}
+.navbar .nav-item .nav-link{
+    color: white;
+}
+.navbar .nav-item:hover .nav-link{
+    background-color: white;
+    color: #303f9f;
+    border-radius: 15px;
+    size: 20px;
+}
+.footer{
+    margin-top: 20px;
+    width: 100%;
+    position: absolute;
+    color: var(--danger);
+    bottom: 0;
+}
+.row{
+    justify-content: center
+}
