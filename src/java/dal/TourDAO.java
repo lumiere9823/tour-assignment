@@ -19,7 +19,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getAllNewTour(){
         List<Tour> listNew = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where category=? and status = ?";
+        String sql = "select * from [Tour] where category=? and status = ?";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "New");
             st.setString(2, "Active");
@@ -48,7 +48,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getAllRecentTour(){
         List<Tour> listRecent = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where status = ? order by id DESC";
+        String sql = "select * from [Tour] where status = ? order by id DESC";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "Active");
            
@@ -77,7 +77,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getAllOldTour(){
         List<Tour> listOld = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where category = ? ";
+        String sql = "select * from [Tour] where category = ? ";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "Old");
            
@@ -106,7 +106,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getOldTour(){
         List<Tour> listOld = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where category = ? ";
+        String sql = "select * from [Tour] where category = ? ";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "Old");
            
@@ -134,7 +134,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getRecentTour(){
         List<Tour> listRecent = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where status = ? order by id DESC";
+        String sql = "select * from [Tour] where status = ? order by id DESC";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "Active");
            
@@ -163,7 +163,7 @@ public class TourDAO extends DBContext {
     public List<Tour> getNewTour(){
         List<Tour> listNew = new ArrayList<>();
         Tour b = null;
-        String sql = "select * from [tourDB].[dbo].[Tour] where category=? and status = ?";
+        String sql = "select * from [Tour] where category=? and status = ?";
         try(PreparedStatement st = connection.prepareStatement(sql)){
             st.setString(1, "New");
             st.setString(2, "Active");
@@ -327,7 +327,7 @@ public class TourDAO extends DBContext {
 
     public boolean addTour(Tour tour) {
 
-        String sql = "INSERT INTO [tourDB].[dbo].[Tour] "
+        String sql = "INSERT INTO [Tour] "
                 + "([name], [author], [price], [category], [status], [photo], [user_email]) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
@@ -353,7 +353,7 @@ public class TourDAO extends DBContext {
     }
 
     public boolean delete(int id){
-        String sql = "DELETE FROM [tourDB].[dbo].[Tour]\n"
+        String sql = "DELETE FROM [Tour]\n"
                 + "    WHERE id=?";
         try{
             PreparedStatement st = connection.prepareStatement(sql);
@@ -369,7 +369,7 @@ public class TourDAO extends DBContext {
     }
     
     public boolean oldTourDelete(String email, String cate) {
-        String sql = "DELETE FROM [tourDB].[dbo].[Tour]\n"
+        String sql = "DELETE FROM [Tour]\n"
                 + "    WHERE category = ? and user_email=?  ";
         try {
             PreparedStatement st = connection.prepareStatement(sql);
@@ -387,7 +387,7 @@ public class TourDAO extends DBContext {
 
     public boolean updateTour(Tour tour) throws SQLException {
         
-        String sql = "UPDATE [tourDB].[dbo].[Tour] \n"
+        String sql = "UPDATE [Tour] \n"
                 + "SET\n"
                 + "		 [name]=?"
                 + "		,[author]=?\n"
