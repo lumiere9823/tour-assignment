@@ -1,9 +1,3 @@
-<%-- 
-    Document   : add_book
-    Created on : 25 thg 6, 2023, 14:54:25
-    Author     : bravee06
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page  isELIgnored="false"%>
@@ -11,7 +5,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Admin: Add Books</title>
+        <title>Admin: Add Tourss</title>
         <%@include file="allCss.jsp"%>
 
     </head>
