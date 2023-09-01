@@ -50,7 +50,7 @@ public class CartDAO extends DBContext {
         return true;
     }
 
-    public boolean deleteBook(int cid) throws SQLException {
+    public boolean deleteTour(int cid) throws SQLException {
         String sql = "delete from [Cart] where cid = ?";
         try ( PreparedStatement ps = connection.prepareStatement(sql)) {
             ps.setInt(1, cid);
